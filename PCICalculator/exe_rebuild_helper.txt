@@ -1,0 +1,22 @@
+# Rebuilding PCICalculator.exe after modifying PCICalculator.py
+
+1. Open Command Prompt and go to the PCICalculator folder:
+   cd C:\Users\MSIUser\Documents\GitHub\PCI-Calculator\PCICalculator
+
+2. Make sure PyInstaller is installed:
+   pip install pyinstaller
+
+3. Build the exe (bundles PCI_ACP_Calculator.xlsx with the program):
+   pyinstaller --noconsole --onefile --add-data "PCI_ACP_Calculator.xlsx;." PCICalculator.py
+
+4. The new exe will be created in:
+   C:\Users\MSIUser\Documents\GitHub\PCI-Calculator\PCICalculator\dist\PCICalculator.exe
+
+5. To run:
+   - Double-click PCICalculator.exe, OR
+   - Run from command line: PCICalculator.exe
+   - Select your CSV file when prompted.
+
+Notes:
+- If you change the way the Excel file is loaded, make sure to use `sys._MEIPASS` so it works both in .py and .exe form.
+- Alternatively, copy `PCI_ACP_Calculator.xlsx` into the dist folder manually if not bundling.
