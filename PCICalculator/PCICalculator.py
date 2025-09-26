@@ -136,11 +136,11 @@ def CalculateValues():
             for lastt in range(len(RawDataList)): # Iterate through the list again
                 RawDataList[lastt].CalcPCI=wb3['CalcMany'].cell(row=lastt+3,column=27).value    # Store the calculated value in the object
                 RawDataWithPCI.append(RawDataList[lastt]) # Copy the object to another list that we will use for exporting the data.
-            
+            print('NEW VERSION')
             RawDataList.clear() # Clear the list
         
-        OutputCSV()             # Create the Output CSV
-        RawDataWithPCI.clear()  # Clear the Output list for another round of processing.
+    OutputCSV()             # Create the Output CSV
+    RawDataWithPCI.clear()  # Clear the Output list for another round of processing.
 
 
     # Function for Button Press that starts the whole thing.
